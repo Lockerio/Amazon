@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "src"
+version = "0.1.0"
+description = ""
+authors = ["Arkadiy <goryunov.arkadiy@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^4.2.7"
+psycopg2 = "^2.9.9"
+djangorestframework = "^3.14.0"
+pillow = "^10.1.0"
+djangorestframework-simplejwt = "^5.3.0"
+drf-spectacular = "^0.26.5"
+dj-database-url = "^2.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

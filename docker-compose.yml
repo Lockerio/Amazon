@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    container_name: drf_app
+    environment:
+      - DB_NAME=amazon
+      - DB_USER=user
+      - DB_PASSWORD=password
+      - DB_HOST=db
+      - DB_PORT=5432
+    command: tail -f /dev/null
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+  db:
+    image: postgres:13-alpine
+    container_name: db
+    volumes:
+      - ./pg_db:/var/lib/postgresql/data/
+    ports:
+      - 5405:5432
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password 
+      - POSTGRES_DB=amazon
